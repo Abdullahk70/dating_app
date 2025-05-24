@@ -4,9 +4,10 @@ import 'package:dating_app_dashboard/screens/sign_in_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 // TODO: Please "scroll down" to see the instructions to fix it.
-import 'firebase_options.dart';
+// import 'firebase_options.dart';
 
 String FCMTOKEN = "";
 
@@ -14,13 +15,24 @@ void main() async {
   // Initialized before calling runApp to init firebase app
   WidgetsFlutterBinding.ensureInitialized();
 
+  // Load environment variables
+  await dotenv.load();
+
   /// ***  Initialize Firebase App *** ///
   /// 👉 Please check the [Documentation - README FIRST] instructions in the
   /// [Admin Panel Table of Contents] at section: [NEW - Firebase initialization for Admin Panel]
   /// in order to fix it and generate the required [firebase_options.dart] for your app.
   /// TODO:
   await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
+    options: FirebaseOptions(
+      apiKey: dotenv.env['FIREBASE_API_KEY']!,
+      authDomain: dotenv.env['FIREBASE_AUTH_DOMAIN'] ?? '',
+      projectId: dotenv.env['FIREBASE_PROJECT_ID']!,
+      storageBucket: dotenv.env['FIREBASE_STORAGE_BUCKET'] ?? '',
+      messagingSenderId: dotenv.env['FIREBASE_MESSAGING_SENDER_ID'] ?? '',
+      appId: dotenv.env['FIREBASE_APP_ID']!,
+      measurementId: dotenv.env['FIREBASE_MEASUREMENT_ID'] ?? '',
+    ),
   );
 
   runApp(const MyApp());
