@@ -7,10 +7,8 @@
     "dev": "flutter run -d web-server --web-port=3000",
     "clean": "flutter clean && flutter pub get",
     "analyze": "flutter analyze",
-    "test": "flutter test"
-  },
-  "dependencies": {
-    "firebase-admin": "^13.0.2"
+    "test": "flutter test",
+    "vercel-build": "flutter build web --release --base-href=/"
   },
   "engines": {
     "node": ">=18.0.0"
