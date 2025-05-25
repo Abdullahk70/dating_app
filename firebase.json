@@ -1,1 +1,15 @@
-{"flutter":{"platforms":{"dart":{"lib/firebase_options.dart":{"projectId":"dating-app-ab810","configurations":{"web":"1:819858395455:web:cd82a245a46826a73a038a"}}}}},"functions":[{"source":"functions","codebase":"default","ignore":["node_modules",".git","firebase-debug.log","firebase-debug.*.log","*.local"]}]}
+{
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ]
+    }
+  ]
+}
