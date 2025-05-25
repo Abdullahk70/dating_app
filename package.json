@@ -1,5 +1,18 @@
 {
+  "name": "dating-app-dashboard",
+  "version": "1.0.0",
+  "description": "Flutter Dating App Admin Panel",
+  "scripts": {
+    "build": "flutter build web --release --base-href=/",
+    "dev": "flutter run -d web-server --web-port=3000",
+    "clean": "flutter clean && flutter pub get",
+    "analyze": "flutter analyze",
+    "test": "flutter test"
+  },
   "dependencies": {
     "firebase-admin": "^13.0.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
